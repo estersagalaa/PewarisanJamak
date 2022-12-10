@@ -9,8 +9,5 @@ package com.praktikkumpbo.uts_no3_a_3106;
  * @author IP130-14AST A4R3
  */
 public interface Pendapatan {
-    
-    public double totalPendapatan();
+    Double totalPendapatan();
 }
-
-

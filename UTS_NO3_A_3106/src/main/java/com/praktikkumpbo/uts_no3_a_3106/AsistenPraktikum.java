@@ -9,8 +9,28 @@ package com.praktikkumpbo.uts_no3_a_3106;
  * @author IP130-14AST A4R3
  */
 public class AsistenPraktikum extends Mahasiswa implements Pendapatan{
-     private String mkAsistensi;
+
+    private String mkAsistensi;
     private int jmlPertemuan;
+
+    @Override
+    public Double totalPendapatan() {
+        return (double) jmlPertemuan * 50000;
+    }
+
+    @Override
+    public void tampilDataMhs(){
+        System.out.println("=== Data Asisten Praktikum ===");
+        System.out.println("NIM                 :" + getNim());
+        System.out.println("Nama                :" + getNama());
+        System.out.println("Jurusan             :" + getJurusan());
+        System.out.println("IPK                 :" + getIpk());
+        System.out.println("MK Asistensi        :" + getMkAsistensi());
+        System.out.println("Jumlah Pertemuan    :" + getJmlPertemuan());
+        System.out.println("----------------------------------------------");
+        System.out.println("Total Pendapatan    : Rp. " + totalPendapatan());
+        System.out.println();
+    }
 
     public String getMkAsistensi() {
         return mkAsistensi;
@@ -27,24 +47,4 @@ public class AsistenPraktikum extends Mahasiswa implements Pendapatan{
     public void setJmlPertemuan(int jmlPertemuan) {
         this.jmlPertemuan = jmlPertemuan;
     }
-
-    @Override
-    public void tampilDataMhs() {
-        System.out.println("NIM                     : " + nim);
-        System.out.println("Nama                    : " + nama);
-        System.out.println("Jurusan                 : " + jurusan);
-        System.out.println("IPK                     : " + ipk);
-        System.out.println("MK Asistentsi           : " + mkAsistensi);
-        System.out.println("Jumlah Pertemuan        : " + jmlPertemuan);
-        System.out.println("-----------------------------------------");
-    }
-
-    @Override
-    public double totalPendapatan() {
-        double totalPendapatan;
-
-        return totalPendapatan = jmlPertemuan * 50000;
-
-    }
-
 }

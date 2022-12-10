@@ -9,14 +9,34 @@ package com.praktikkumpbo.uts_no3_a_3106;
  * @author IP130-14AST A4R3
  */
 public class StudentStaff extends Mahasiswa implements Pendapatan {
-     private int unitKerja;
+
+    private String unitKerja;
     private int jamKerja;
 
-    public int getUnitKerja() {
+    @Override
+    public Double totalPendapatan() {
+        return (double) jamKerja * 30000;
+    }
+
+    @Override
+    public void tampilDataMhs(){
+        System.out.println("=== Data Student Staff ===");
+        System.out.println("NIM                  :" + getNim());
+        System.out.println("Nama                 :" + getNama());
+        System.out.println("Jurusan             :" + getJurusan());
+        System.out.println("IPK                 :" + getIpk());
+        System.out.println("Unit Kerja          :" + getUnitKerja());
+        System.out.println("Jam Kerja           :" + getJamKerja());
+        System.out.println("----------------------------------------------");
+        System.out.println("Total Pendapatan    : Rp. " + totalPendapatan());
+        System.out.println();
+    }
+
+    public String getUnitKerja() {
         return unitKerja;
     }
 
-    public void setUnitKerja(int unitKerja) {
+    public void setUnitKerja(String unitKerja) {
         this.unitKerja = unitKerja;
     }
 
@@ -27,24 +47,4 @@ public class StudentStaff extends Mahasiswa implements Pendapatan {
     public void setJamKerja(int jamKerja) {
         this.jamKerja = jamKerja;
     }
-
-    @Override
-    public void tampilDataMhs() {
-        System.out.println("NIM                     : " + nim);
-        System.out.println("Nama                    : " + nama);
-        System.out.println("Jurusan                 : " + jurusan);
-        System.out.println("IPK                     : " + ipk);
-        System.out.println("Unit Kerja              : " + unitKerja);
-        System.out.println("Jam Kerja               : " + jamKerja);
-        System.out.println("-----------------------------------------");
-    }
-
-    @Override
-    public double totalPendapatan() {
-        double totalPendapatan;
-
-        return totalPendapatan = jamKerja * 30000;
-
-    }
-
 }
